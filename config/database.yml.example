@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  timeout: 5000
+  pool: 5
+  username: urlshorter
+  password: urlshorter
+
+test:
+  <<: *default
+  host: localhost
+  database: url_shortener_test
+
+development:
+  <<: *default
+  host: localhost
+  database: url_shortener_dev
+
+production:
+  <<: *default
+  database: <%= ENV['CLEARDB_DATABASE_URL'] %>
+  username: app
+  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+  
