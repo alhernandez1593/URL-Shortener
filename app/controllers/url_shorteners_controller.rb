@@ -2,11 +2,13 @@ class UrlShortenersController < ApplicationController
   before_action :find_url, only: [:create]
 
   def create
-    unless @url_shortener.nil?
+    if @url_shortener.nil?
       @url_shortener = UrlShortener.new(url_shortener_params)
       @url_shortener.save
     end
-    render json: request.base_url + "/" + @url_shortener.shorter_url
+    render json: {
+      "shorter": request.base_url + "/" + @url_shortener.shorter_url
+    }
   end
 
   def top_hundred_visited

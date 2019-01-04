@@ -29,6 +29,10 @@ Simple Url shortener example
 
 2. Use Postman or curl to call endpoints, Postman info in [here](https://www.getpostman.com/)
 
+### Live Demo ###
+
+1. App is hosted in Heroku [here]()
+
 ### Run tests: ###
 
 1. `rake db:test:prepare`

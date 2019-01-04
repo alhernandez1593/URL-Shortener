@@ -16,6 +16,8 @@ class UrlShortener < ApplicationRecord
 
   def create_url_short
     self.visited = 0
-    self.shorter_url = ([*('A'..'Z'), *('0'..'9')] - %w[0 1 O]).sample(6).join until UrlShortener.find_by(shorter_url: shorter_url).nil?
+    chars = ([*('A'..'Z'), *('a'..'z'), *('0'..'9')] - %w[0 1 O]).flatten
+    self.shorter_url = 6.times.map { chars.sample }.join
+    self.shorter_url = 6.times.map { chars.sample }.join until UrlShortener.find_by(shorter_url: shorter_url).nil?
   end
 end
