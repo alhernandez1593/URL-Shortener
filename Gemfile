@@ -36,6 +36,7 @@ group :development, :test do
   gem 'pry'
   gem 'rspec-its'
   gem 'rspec-rails'
+  gem 'annotate'
   gem 'rubocop', '~> 0.62.0', require: false
 end
 

@@ -2,7 +2,7 @@ class UrlShortenersController < ApplicationController
   before_action :find_url, only: [:create]
 
   def create
-    unless @url_shortener.nil? 
+    unless @url_shortener.nil?
       @url_shortener = UrlShortener.new(url_shortener_params)
       @url_shortener.save
     end
@@ -29,5 +29,4 @@ class UrlShortenersController < ApplicationController
   def find_url
     @url_shortener = UrlShortener.find_by(original_url: url_shortener_params[:original_url])
   end
-
 end
