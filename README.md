@@ -1,7 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
 ### What is this repository for? ###
 
@@ -27,7 +25,9 @@ Simple Url shortener example
 
 ### Run the local server ####
 
-14. Run the server -> `foreman start -f Procfile.dev` (this will run servers for both Rails and Angular 5 apps)
+1. Run the server -> `rails s`
+
+2. Use Postman or curl to call endpoints, Postman info in [here](https://www.getpostman.com/)
 
 ### Run tests: ###
 
