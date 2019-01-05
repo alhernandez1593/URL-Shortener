@@ -5,9 +5,10 @@ class UrlShortenersController < ApplicationController
     if @url_shortener.nil?
       @url_shortener = UrlShortener.new(url_shortener_params)
       @url_shortener.save
+      Resque.enqueue(TitleJob,@url_shortener)
     end
     render json: {
-      "shorter": request.base_url + "/" + @url_shortener.shorter_url
+      "data": request.base_url + "/" + @url_shortener.shorter_url
     }
   end
 
