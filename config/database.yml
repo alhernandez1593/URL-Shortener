@@ -11,7 +11,7 @@ test:
   <<: *default
   host: localhost
   database: url_shortener_test
-
+     
 development:
   <<: *default
   host: localhost
